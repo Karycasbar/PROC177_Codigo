@@ -1,0 +1,23 @@
+            type: "post",
+            data: JSON.stringify(data),
+            dataType: "json",
+            contentType: 'application/json',
+            success: function (result) {
+                $("#result").html(result.result)
+                $("#result_container").removeClass("hidden")
+            },
+            error: function (result) {
+                alert(result.responseJSON.message)
+            }
+--------------------------------------------------------------------------------
+    $.ajax({
+        url: "/get-story",
+        type: "get",
+        success: function (result) {
+            displayStory(result.story)
+        },
+        error: function (result) {
+            alert(result.responseJSON.message)
+        }
+    })
+------------------------------------------------------------------------------
